@@ -2,8 +2,8 @@
 
 A full-stack system that helps a victim of cybercrime (UPI fraud, phishing, OTP scams, sextortion, etc.) understand what happened, which Indian laws apply, and generates a ready-to-file complaint — end to end, from a plain-text description to a downloadable PDF/DOCX report.
 
-**Live demo:** _add your Vercel URL here_
-**Backend API docs:** https://cybersleuth-ai-1.onrender.com/complaint-draft`/docs` here_
+**Live demo:**  https://cybersleuth-ai-1.onrender.com
+**Backend API docs:** `/docs` here_
 
 ---
 
