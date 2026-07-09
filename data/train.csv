@@ -1,0 +1,148 @@
+text,label
+"Someone called claiming to be from HDFC and asked for the OTP I received, after which Rs 20,000 was withdrawn.",otp_scam
+"I received a fake UPI collect request pretending to be from PhonePe support and lost Rs 15,000.",upi_fraud
+"My UPI PIN was never shared but Rs 15,000 was withdrawn after I clicked a link claiming to be from Amazon support.",upi_fraud
+"Someone sent me a KYC update link and after I clicked it, Rs 900 was debited from my SBI account via UPI.",upi_fraud
+"Someone posing as a stock market expert on Instagram got me to invest Rs 8,000 through a fake trading platform.",investment_scam
+"My SIM was deactivated without my knowledge and my SBI account was accessed and Rs 12,000 was transferred out.",sim_swap
+"Someone sent me a refund link and after I clicked it, Rs 15,000 was debited from my HDFC account via UPI.",upi_fraud
+"Someone posing as a stock market expert on Telegram got me to invest Rs 8,000 through a fake trading platform.",investment_scam
+"A group on Telegram convinced me to invest Rs 8,000 in cryptocurrency and the app stopped working after I deposited funds.",investment_scam
+"Someone recorded a video call with me and is now threatening to share it unless I pay Rs 25,000.",sextortion
+"My SIM was deactivated without my knowledge and my ICICI account was accessed and Rs 75,000 was transferred out.",sim_swap
+"Someone sent me a KYC update link and after I clicked it, Rs 15,000 was debited from my ICICI account via UPI.",upi_fraud
+"Someone sent me a cashback link and after I clicked it, Rs 900 was debited from my HDFC account via UPI.",upi_fraud
+"I got an email pretending to be from my company IT team asking me to log in and verify my account, and now my email account is compromised.",phishing
+"Someone sent me a fake UPI link and after I clicked it, Rs 15,000 was debited from my ICICI account via UPI.",upi_fraud
+"I invested Rs 1,20,000 in a trading app recommended by a stranger on WhatsApp that promised guaranteed high returns, and now I cannot withdraw my money.",investment_scam
+"Someone sent me a cashback link and after I clicked it, Rs 900 was debited from my ICICI account via UPI.",upi_fraud
+"My UPI PIN was never shared but Rs 48,000 was withdrawn after I clicked a link claiming to be from a bank official.",upi_fraud
+I entered my email account password on a link sent via SMS that looked like it was from my bank.,phishing
+"Someone sent me a fake UPI link and after I clicked it, Rs 15,000 was debited from my HDFC account via UPI.",upi_fraud
+"A scammer asked me to scan a QR code to 'receive' a refund, and instead Rs 48,000 got deducted from my account.",upi_fraud
+A message claiming to be Netflix asked for my login details through a fake website that looked identical to the real one.,phishing
+"I got an email pretending to be from Netflix asking me to log in and verify my account, and now my company account is compromised.",phishing
+"Someone sent me a refund link and after I clicked it, Rs 15,000 was debited from my ICICI account via UPI.",upi_fraud
+"I paid Rs 2,000 to a company claiming to offer part-time data entry jobs found on Instagram, and now they are unreachable.",fake_job_offer
+"Someone called claiming to be from HDFC and asked for the OTP I received, after which Rs 5,500 was withdrawn.",otp_scam
+My UPI PIN was never shared but Rs 900 was withdrawn after I clicked a link claiming to be from PhonePe support.,upi_fraud
+I entered my company account password on a link sent via SMS that looked like it was from Income Tax Department.,phishing
+"I received a fake UPI collect request pretending to be from my electricity board and lost Rs 3,200.",upi_fraud
+"I received a fake UPI collect request pretending to be from my electricity board and lost Rs 15,000.",upi_fraud
+"Someone sent me a fake UPI link and after I clicked it, Rs 3,200 was debited from my SBI account via UPI.",upi_fraud
+"Someone posing as a stock market expert on Telegram got me to invest Rs 1,20,000 through a fake trading platform.",investment_scam
+"Someone sent me a KYC update link and after I clicked it, Rs 3,200 was debited from my SBI account via UPI.",upi_fraud
+"Someone called claiming to be from HDFC and asked for the OTP I received, after which Rs 60,000 was withdrawn.",otp_scam
+"My SIM was deactivated without my knowledge and my HDFC account was accessed and Rs 12,000 was transferred out.",sim_swap
+"A scammer asked me to scan a QR code to 'receive' a refund, and instead Rs 900 got deducted from my account.",upi_fraud
+"I got an email pretending to be from Income Tax Department asking me to log in and verify my account, and now my company account is compromised.",phishing
+"A recruiter contacted me on a job portal promising a high-paying job and asked for Rs 10,000 upfront for 'training material'.",fake_job_offer
+"Someone sent me a cashback link and after I clicked it, Rs 48,000 was debited from my SBI account via UPI.",upi_fraud
+I entered my company account password on a link sent via SMS that looked like it was from my company IT team.,phishing
+"I got an email pretending to be from my bank asking me to log in and verify my account, and now my company account is compromised.",phishing
+A message claiming to be Income Tax Department asked for my login details through a fake website that looked identical to the real one.,phishing
+I entered my net banking password on a link sent via SMS that looked like it was from my bank.,phishing
+"I was offered a work-from-home job by a recruiter and asked to pay Rs 2,000 as a 'registration fee', after which they stopped responding.",fake_job_offer
+I entered my email account password on a link sent via SMS that looked like it was from my company IT team.,phishing
+"I got an email pretending to be from my bank asking me to log in and verify my account, and now my net banking is compromised.",phishing
+"Someone sent me a KYC update link and after I clicked it, Rs 900 was debited from my ICICI account via UPI.",upi_fraud
+My UPI PIN was never shared but Rs 900 was withdrawn after I clicked a link claiming to be from my electricity board.,upi_fraud
+"I was blackmailed with morphed images and asked to pay Rs 10,000 to prevent them being shared with my contacts.",sextortion
+"I paid Rs 25,000 to a company claiming to offer part-time data entry jobs found on Telegram, and now they are unreachable.",fake_job_offer
+I entered my email account password on a link sent via SMS that looked like it was from Income Tax Department.,phishing
+"Someone called claiming to be from ICICI and asked for the OTP I received, after which Rs 5,500 was withdrawn.",otp_scam
+"I paid Rs 2,000 to a company claiming to offer part-time data entry jobs found on WhatsApp, and now they are unreachable.",fake_job_offer
+"I was blackmailed with morphed images and asked to pay Rs 25,000 to prevent them being shared with my contacts.",sextortion
+"I was offered a work-from-home job by an HR agency and asked to pay Rs 25,000 as a 'registration fee', after which they stopped responding.",fake_job_offer
+I entered my net banking password on a link sent via SMS that looked like it was from Income Tax Department.,phishing
+"A person I met online is threatening to leak private photos unless I send Rs 10,000.",sextortion
+"I paid Rs 25,000 to a company claiming to offer part-time data entry jobs found on WhatsApp, and now they are unreachable.",fake_job_offer
+"Someone sent me a KYC update link and after I clicked it, Rs 15,000 was debited from my Axis account via UPI.",upi_fraud
+I entered my social media account password on a link sent via SMS that looked like it was from my company IT team.,phishing
+"A recruiter contacted me on Instagram promising a high-paying job and asked for Rs 25,000 upfront for 'training material'.",fake_job_offer
+"A group on WhatsApp convinced me to invest Rs 8,000 in cryptocurrency and the app stopped working after I deposited funds.",investment_scam
+"Someone sent me a refund link and after I clicked it, Rs 900 was debited from my Axis account via UPI.",upi_fraud
+I entered my company account password on a link sent via SMS that looked like it was from my bank.,phishing
+"I received a call about a 'card block' issue and was tricked into sharing OTP, leading to a loss of Rs 60,000.",otp_scam
+"I invested Rs 50,000 in a trading app recommended by a Telegram group admin that promised guaranteed high returns, and now I cannot withdraw my money.",investment_scam
+"I received a fake UPI collect request pretending to be from a bank official and lost Rs 15,000.",upi_fraud
+"My UPI PIN was never shared but Rs 48,000 was withdrawn after I clicked a link claiming to be from PhonePe support.",upi_fraud
+"A recruiter contacted me on WhatsApp promising a high-paying job and asked for Rs 2,000 upfront for 'training material'.",fake_job_offer
+"I paid Rs 10,000 to a company claiming to offer part-time data entry jobs found on WhatsApp, and now they are unreachable.",fake_job_offer
+I entered my net banking password on a link sent via SMS that looked like it was from my company IT team.,phishing
+"My phone suddenly lost network, and later I found Rs 40,000 was withdrawn from my bank account without any OTP prompt on my phone.",sim_swap
+"I was offered a work-from-home job by an HR agency and asked to pay Rs 2,000 as a 'registration fee', after which they stopped responding.",fake_job_offer
+"Someone sent me a KYC update link and after I clicked it, Rs 48,000 was debited from my Axis account via UPI.",upi_fraud
+"A group on Telegram convinced me to invest Rs 1,20,000 in cryptocurrency and the app stopped working after I deposited funds.",investment_scam
+"A group on WhatsApp convinced me to invest Rs 50,000 in cryptocurrency and the app stopped working after I deposited funds.",investment_scam
+"Someone sent me a refund link and after I clicked it, Rs 48,000 was debited from my HDFC account via UPI.",upi_fraud
+"Someone recorded a video call with me and is now threatening to share it unless I pay Rs 10,000.",sextortion
+"Someone sent me a cashback link and after I clicked it, Rs 48,000 was debited from my HDFC account via UPI.",upi_fraud
+"A group on Telegram convinced me to invest Rs 50,000 in cryptocurrency and the app stopped working after I deposited funds.",investment_scam
+"I received a fake UPI collect request pretending to be from Amazon support and lost Rs 48,000.",upi_fraud
+"I invested Rs 8,000 in a trading app recommended by an 'advisor' that promised guaranteed high returns, and now I cannot withdraw my money.",investment_scam
+"I invested Rs 1,20,000 in a trading app recommended by a Telegram group admin that promised guaranteed high returns, and now I cannot withdraw my money.",investment_scam
+"My SIM was deactivated without my knowledge and my ICICI account was accessed and Rs 12,000 was transferred out.",sim_swap
+"I got an email pretending to be from Income Tax Department asking me to log in and verify my account, and now my social media account is compromised.",phishing
+"Someone called claiming to be from ICICI and asked for the OTP I received, after which Rs 20,000 was withdrawn.",otp_scam
+"I was blackmailed with morphed images and asked to pay Rs 5,000 to prevent them being shared with my contacts.",sextortion
+"Someone sent me a refund link and after I clicked it, Rs 48,000 was debited from my Axis account via UPI.",upi_fraud
+"I got an email pretending to be from Netflix asking me to log in and verify my account, and now my net banking is compromised.",phishing
+"I got an email pretending to be from my company IT team asking me to log in and verify my account, and now my company account is compromised.",phishing
+"A caller pretending to be a bank representative convinced me to share my OTP, and money was deducted from my account.",otp_scam
+I received a fake UPI collect request pretending to be from Amazon support and lost Rs 900.,upi_fraud
+"I got an email pretending to be from Netflix asking me to log in and verify my account, and now my email account is compromised.",phishing
+"A recruiter contacted me on Telegram promising a high-paying job and asked for Rs 2,000 upfront for 'training material'.",fake_job_offer
+"Someone sent me a refund link and after I clicked it, Rs 15,000 was debited from my Axis account via UPI.",upi_fraud
+"Someone sent me a KYC update link and after I clicked it, Rs 900 was debited from my HDFC account via UPI.",upi_fraud
+I entered my social media account password on a link sent via SMS that looked like it was from Income Tax Department.,phishing
+"A recruiter contacted me on a job portal promising a high-paying job and asked for Rs 2,000 upfront for 'training material'.",fake_job_offer
+I received a fake UPI collect request pretending to be from my electricity board and lost Rs 900.,upi_fraud
+"I got an email pretending to be from Income Tax Department asking me to log in and verify my account, and now my email account is compromised.",phishing
+"I was offered a work-from-home job by a recruiter and asked to pay Rs 10,000 as a 'registration fee', after which they stopped responding.",fake_job_offer
+"A scammer asked me to scan a QR code to 'receive' a refund, and instead Rs 3,200 got deducted from my account.",upi_fraud
+"Someone sent me a fake UPI link and after I clicked it, Rs 3,200 was debited from my HDFC account via UPI.",upi_fraud
+"Someone sent me a KYC update link and after I clicked it, Rs 3,200 was debited from my HDFC account via UPI.",upi_fraud
+"I received a fake UPI collect request pretending to be from PhonePe support and lost Rs 48,000.",upi_fraud
+"I received a call about a 'card block' issue and was tricked into sharing OTP, leading to a loss of Rs 5,500.",otp_scam
+"Someone sent me a KYC update link and after I clicked it, Rs 48,000 was debited from my ICICI account via UPI.",upi_fraud
+"My SIM was deactivated without my knowledge and my ICICI account was accessed and Rs 40,000 was transferred out.",sim_swap
+"Someone called claiming to be from Axis and asked for the OTP I received, after which Rs 60,000 was withdrawn.",otp_scam
+I received a fake UPI collect request pretending to be from a bank official and lost Rs 900.,upi_fraud
+"Someone posing as a stock market expert on Instagram got me to invest Rs 1,20,000 through a fake trading platform.",investment_scam
+"A recruiter contacted me on WhatsApp promising a high-paying job and asked for Rs 10,000 upfront for 'training material'.",fake_job_offer
+"I received a fake UPI collect request pretending to be from a bank official and lost Rs 3,200.",upi_fraud
+"Someone sent me a refund link and after I clicked it, Rs 15,000 was debited from my SBI account via UPI.",upi_fraud
+"My UPI PIN was never shared but Rs 48,000 was withdrawn after I clicked a link claiming to be from my electricity board.",upi_fraud
+"A person I met online is threatening to leak private photos unless I send Rs 25,000.",sextortion
+A message claiming to be my company IT team asked for my login details through a fake website that looked identical to the real one.,phishing
+"Someone called claiming to be from ICICI and asked for the OTP I received, after which Rs 60,000 was withdrawn.",otp_scam
+"A recruiter contacted me on a job portal promising a high-paying job and asked for Rs 25,000 upfront for 'training material'.",fake_job_offer
+"I was offered a work-from-home job by an HR agency and asked to pay Rs 10,000 as a 'registration fee', after which they stopped responding.",fake_job_offer
+"I received a fake UPI collect request pretending to be from my electricity board and lost Rs 48,000.",upi_fraud
+"A scammer asked me to scan a QR code to 'receive' a refund, and instead Rs 15,000 got deducted from my account.",upi_fraud
+"A recruiter contacted me on Telegram promising a high-paying job and asked for Rs 10,000 upfront for 'training material'.",fake_job_offer
+"My SIM was deactivated without my knowledge and my SBI account was accessed and Rs 40,000 was transferred out.",sim_swap
+"Someone sent me a KYC update link and after I clicked it, Rs 15,000 was debited from my SBI account via UPI.",upi_fraud
+I entered my email account password on a link sent via SMS that looked like it was from Netflix.,phishing
+I entered my company account password on a link sent via SMS that looked like it was from Netflix.,phishing
+"My UPI PIN was never shared but Rs 15,000 was withdrawn after I clicked a link claiming to be from PhonePe support.",upi_fraud
+"A group on Instagram convinced me to invest Rs 8,000 in cryptocurrency and the app stopped working after I deposited funds.",investment_scam
+"I got an email pretending to be from Netflix asking me to log in and verify my account, and now my social media account is compromised.",phishing
+"I received a fake UPI collect request pretending to be from PhonePe support and lost Rs 3,200.",upi_fraud
+"Someone posing as a stock market expert on WhatsApp got me to invest Rs 8,000 through a fake trading platform.",investment_scam
+"Someone called claiming to be from Axis and asked for the OTP I received, after which Rs 5,500 was withdrawn.",otp_scam
+"A recruiter contacted me on WhatsApp promising a high-paying job and asked for Rs 25,000 upfront for 'training material'.",fake_job_offer
+I entered my social media account password on a link sent via SMS that looked like it was from Netflix.,phishing
+I entered my social media account password on a link sent via SMS that looked like it was from my bank.,phishing
+"A caller pretending to be a insurance company representative convinced me to share my OTP, and money was deducted from my account.",otp_scam
+"Someone sent me a cashback link and after I clicked it, Rs 900 was debited from my Axis account via UPI.",upi_fraud
+"Someone sent me a cashback link and after I clicked it, Rs 15,000 was debited from my HDFC account via UPI.",upi_fraud
+"I invested Rs 50,000 in a trading app recommended by a stranger on WhatsApp that promised guaranteed high returns, and now I cannot withdraw my money.",investment_scam
+"My phone suddenly lost network, and later I found Rs 75,000 was withdrawn from my bank account without any OTP prompt on my phone.",sim_swap
+"Someone sent me a cashback link and after I clicked it, Rs 3,200 was debited from my HDFC account via UPI.",upi_fraud
+"I was offered a work-from-home job by a company called Bright Careers and asked to pay Rs 10,000 as a 'registration fee', after which they stopped responding.",fake_job_offer
+"I received a fake UPI collect request pretending to be from a bank official and lost Rs 48,000.",upi_fraud
+"I invested Rs 1,20,000 in a trading app recommended by an 'advisor' that promised guaranteed high returns, and now I cannot withdraw my money.",investment_scam
+"My UPI PIN was never shared but Rs 15,000 was withdrawn after I clicked a link claiming to be from a bank official.",upi_fraud
+"A group on Instagram convinced me to invest Rs 1,20,000 in cryptocurrency and the app stopped working after I deposited funds.",investment_scam

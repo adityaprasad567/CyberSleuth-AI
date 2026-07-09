@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pydantic
+python-dotenv
+python-docx
+reportlab
+python-multipart
+opencv-python-headless
+google-genai

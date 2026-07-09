@@ -1,0 +1,25 @@
+.venv/
+__pycache__/
+*.pyc
+
+.env
+
+# Generated at runtime - not part of the source
+storage/app.db
+storage/uploaded_files/*
+!storage/uploaded_files/.gitkeep
+storage/generated_reports/*
+!storage/generated_reports/.gitkeep
+storage/blobs/*
+!storage/blobs/.gitkeep
+
+# Frontend build output / deps
+frontend/node_modules/
+frontend/.output/
+frontend/.vite/
+
+# Trained model + index artifacts (large binary files - regenerate via train.py / build_index.py)
+classifier/crime_classifier/
+rag/index/
+
+.vscode/*.log

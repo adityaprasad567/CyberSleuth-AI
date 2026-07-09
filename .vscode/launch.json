@@ -1,0 +1,73 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Data: Generate dataset",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/data/generate_dataset.py",
+      "cwd": "${workspaceFolder}/data",
+      "args": ["--per_template", "40"],
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Classifier: Train",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/classifier/train.py",
+      "cwd": "${workspaceFolder}/classifier",
+      "args": ["--model_name", "distilbert-base-uncased", "--epochs", "4"],
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Classifier: Predict (sample text)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/classifier/predict.py",
+      "cwd": "${workspaceFolder}/classifier",
+      "args": ["--text", "Someone took money from my bank account using a fake UPI link"],
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "RAG: Build index",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/rag/build_index.py",
+      "cwd": "${workspaceFolder}/rag",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "RAG: Test retrieval",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/rag/retrieve.py",
+      "cwd": "${workspaceFolder}/rag",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Backend: FastAPI (uvicorn)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": ["main:app", "--reload", "--port", "8000"],
+      "cwd": "${workspaceFolder}/backend",
+      "envFile": "${workspaceFolder}/.env",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Reports: Test PDF generation",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/reports/pdf_report.py",
+      "cwd": "${workspaceFolder}/reports",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}

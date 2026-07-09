@@ -1,0 +1,34 @@
+text,label
+"Someone sent me a KYC update link and after I clicked it, Rs 48,000 was debited from my SBI account via UPI.",upi_fraud
+"My UPI PIN was never shared but Rs 3,200 was withdrawn after I clicked a link claiming to be from Amazon support.",upi_fraud
+"A recruiter contacted me on Telegram promising a high-paying job and asked for Rs 25,000 upfront for 'training material'.",fake_job_offer
+"I got an email pretending to be from my bank asking me to log in and verify my account, and now my social media account is compromised.",phishing
+"I paid Rs 10,000 to a company claiming to offer part-time data entry jobs found on Telegram, and now they are unreachable.",fake_job_offer
+"A group on Instagram convinced me to invest Rs 50,000 in cryptocurrency and the app stopped working after I deposited funds.",investment_scam
+"Someone sent me a cashback link and after I clicked it, Rs 15,000 was debited from my SBI account via UPI.",upi_fraud
+I received a fake UPI collect request pretending to be from PhonePe support and lost Rs 900.,upi_fraud
+"My UPI PIN was never shared but Rs 15,000 was withdrawn after I clicked a link claiming to be from my electricity board.",upi_fraud
+"My UPI PIN was never shared but Rs 3,200 was withdrawn after I clicked a link claiming to be from my electricity board.",upi_fraud
+"I got an email pretending to be from my company IT team asking me to log in and verify my account, and now my net banking is compromised.",phishing
+I entered my net banking password on a link sent via SMS that looked like it was from Netflix.,phishing
+"I got an email pretending to be from my bank asking me to log in and verify my account, and now my email account is compromised.",phishing
+"Someone posing as a stock market expert on WhatsApp got me to invest Rs 50,000 through a fake trading platform.",investment_scam
+"A recruiter contacted me on Instagram promising a high-paying job and asked for Rs 10,000 upfront for 'training material'.",fake_job_offer
+"A person I met online is threatening to leak private photos unless I send Rs 5,000.",sextortion
+"I was offered a work-from-home job by a company called Bright Careers and asked to pay Rs 2,000 as a 'registration fee', after which they stopped responding.",fake_job_offer
+"Someone called claiming to be from SBI and asked for the OTP I received, after which Rs 20,000 was withdrawn.",otp_scam
+"Someone called claiming to be from SBI and asked for the OTP I received, after which Rs 60,000 was withdrawn.",otp_scam
+"Someone sent me a fake UPI link and after I clicked it, Rs 15,000 was debited from my Axis account via UPI.",upi_fraud
+"I was offered a work-from-home job by a company called Bright Careers and asked to pay Rs 25,000 as a 'registration fee', after which they stopped responding.",fake_job_offer
+"I got an email pretending to be from Income Tax Department asking me to log in and verify my account, and now my net banking is compromised.",phishing
+"Someone sent me a fake UPI link and after I clicked it, Rs 48,000 was debited from my ICICI account via UPI.",upi_fraud
+"I paid Rs 10,000 to a company claiming to offer part-time data entry jobs found on a job portal, and now they are unreachable.",fake_job_offer
+"I got an email pretending to be from my company IT team asking me to log in and verify my account, and now my social media account is compromised.",phishing
+"A recruiter contacted me on Instagram promising a high-paying job and asked for Rs 2,000 upfront for 'training material'.",fake_job_offer
+"My SIM was deactivated without my knowledge and my HDFC account was accessed and Rs 40,000 was transferred out.",sim_swap
+"I was offered a work-from-home job by a recruiter and asked to pay Rs 25,000 as a 'registration fee', after which they stopped responding.",fake_job_offer
+"I paid Rs 2,000 to a company claiming to offer part-time data entry jobs found on a job portal, and now they are unreachable.",fake_job_offer
+"A group on WhatsApp convinced me to invest Rs 1,20,000 in cryptocurrency and the app stopped working after I deposited funds.",investment_scam
+"Someone sent me a refund link and after I clicked it, Rs 900 was debited from my ICICI account via UPI.",upi_fraud
+"I invested Rs 50,000 in a trading app recommended by an 'advisor' that promised guaranteed high returns, and now I cannot withdraw my money.",investment_scam
+"I invested Rs 8,000 in a trading app recommended by a Telegram group admin that promised guaranteed high returns, and now I cannot withdraw my money.",investment_scam

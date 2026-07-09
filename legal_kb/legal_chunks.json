@@ -1,0 +1,58 @@
+[
+  {
+    "id": "it_act_66c",
+    "title": "IT Act Section 66C - Identity Theft",
+    "text": "Whoever, fraudulently or dishonestly makes use of the electronic signature, password or any other unique identification feature of any other person, shall be punished with imprisonment of either description for a term which may extend to three years and shall also be liable to fine which may extend to rupees one lakh.",
+    "tags": ["it_act_66c"],
+    "regime": "IT Act 2000 (as amended)"
+  },
+  {
+    "id": "it_act_66d",
+    "title": "IT Act Section 66D - Cheating by Personation Using Computer Resource",
+    "text": "Whoever, by means of any communication device or computer resource cheats by personation, shall be punished with imprisonment of either description for a term which may extend to three years and shall also be liable to fine which may extend to one lakh rupees.",
+    "tags": ["it_act_66d"],
+    "regime": "IT Act 2000 (as amended)"
+  },
+  {
+    "id": "it_act_66e",
+    "title": "IT Act Section 66E - Violation of Privacy",
+    "text": "Whoever, intentionally or knowingly captures, publishes or transmits the image of a private area of any person without his or her consent, under circumstances violating the privacy of that person, shall be punished with imprisonment which may extend to three years or with fine not exceeding two lakh rupees, or with both.",
+    "tags": ["it_act_66e"],
+    "regime": "IT Act 2000 (as amended)"
+  },
+  {
+    "id": "bns_cheating_318",
+    "title": "BNS Section 318 - Cheating (replaces IPC 420)",
+    "text": "Whoever cheats and thereby dishonestly induces the person deceived to deliver any property to any person, or to make, alter or destroy the whole or any part of a valuable security, shall be punished with imprisonment of either description for a term which may extend to seven years, and shall also be liable to fine, depending on the nature and value of the deception.",
+    "tags": ["bns_cheating"],
+    "regime": "Bharatiya Nyaya Sanhita (BNS) 2023 - applies to offenses committed on or after 1 July 2024"
+  },
+  {
+    "id": "ipc_420_legacy",
+    "title": "IPC Section 420 - Cheating and Dishonestly Inducing Delivery of Property (legacy)",
+    "text": "Whoever cheats and thereby dishonestly induces the person deceived to deliver any property to any person, shall be punished with imprisonment of either description for a term which may extend to seven years, and shall also be liable to fine. This section applied to offenses committed before 1 July 2024; such offenses continue to be prosecuted under the IPC.",
+    "tags": ["bns_cheating", "legacy_ipc"],
+    "regime": "Indian Penal Code (IPC) - applies to offenses committed before 1 July 2024"
+  },
+  {
+    "id": "bns_sexual_offense_77",
+    "title": "BNS Section 77 - Voyeurism (relevant to sextortion cases)",
+    "text": "Any man who watches or captures the image of a woman engaging in a private act, or disseminates such image, is guilty of the offense of voyeurism, punishable with imprisonment on first conviction for a term between one and three years, and on subsequent conviction for a term between three and seven years, along with a fine.",
+    "tags": ["bns_sexual_offense"],
+    "regime": "Bharatiya Nyaya Sanhita (BNS) 2023"
+  },
+  {
+    "id": "npci_dispute_process",
+    "title": "NPCI / Bank UPI Dispute Resolution Process",
+    "text": "For unauthorized UPI transactions, the affected user should immediately raise a complaint with their bank's customer care or through the UPI app's in-app dispute/report option, and separately file a report on the National Cybercrime Reporting Portal. Under RBI's limited liability circular, prompt reporting (ideally within a few hours, and no later than 3 working days) preserves the customer's right to zero or limited liability for unauthorized transactions.",
+    "tags": ["npci_dispute"],
+    "regime": "RBI Customer Protection Circular"
+  },
+  {
+    "id": "cybercrime_1930_helpline",
+    "title": "National Cybercrime Helpline 1930",
+    "text": "1930 is the national cybercrime helpline for reporting financial fraud. Calling immediately after a fraudulent transaction increases the chance that the amount can be frozen before it is withdrawn by the fraudster, since banks and payment apps can act on a freeze request routed through this helpline network.",
+    "tags": ["procedural", "urgent_action"],
+    "regime": "Ministry of Home Affairs - Indian Cybercrime Coordination Centre (I4C)"
+  }
+]

@@ -1,0 +1,53 @@
+# Only needed if CLASSIFIER_BACKEND=local (the DistilBERT option). Skip all
+# of these for CLASSIFIER_BACKEND=sklearn or =gemini - saves ~1GB+ install.
+transformers>=4.40.0
+datasets>=2.19.0
+torch>=2.0.0
+scikit-learn>=1.3.0
+evaluate>=0.4.0
+accelerate>=0.29.0
+
+# Only needed if CLASSIFIER_BACKEND=sklearn (lightweight, ~150-200MB total,
+# no torch/GPU/API key - see classifier/train_lite.py). If you're already
+# installing scikit-learn above for CLASSIFIER_BACKEND=local, joblib comes
+# bundled with it automatically.
+# scikit-learn>=1.3.0
+# joblib>=1.3.0
+
+# RAG pipeline. Only needed if RETRIEVER_BACKEND=faiss (default, embedding-
+# based ranking - sentence-transformers itself needs torch). Skip both for
+# RETRIEVER_BACKEND=lite (see rag/retrieve_lite.py, plain tag-filtering,
+# no ML dependency - reasonable given legal_kb only has a handful of chunks).
+sentence-transformers>=2.6.0
+faiss-cpu>=1.8.0
+
+google-genai>=1.0.0   # only needed for CLASSIFIER_BACKEND=gemini and/or LLM reasoning (optional there too - auto-falls-back to offline templates if no key is set)
+
+# Backend + frontend
+fastapi>=0.110.0
+uvicorn>=0.29.0
+pydantic>=2.7.0
+streamlit>=1.35.0
+requests>=2.31.0
+
+# Phase 1 (report generation) - actually verified in dev sandbox
+reportlab>=4.2.0
+
+# Phase 2 (evidence upload, extraction, hashing)
+opencv-python-headless>=4.9.0   # QR code decoding via cv2.QRCodeDetector - no zbar system dep needed
+python-multipart>=0.0.9         # required by FastAPI for file uploads (UploadFile/Form)
+# spacy>=3.7.0                   # optional: enables extract_names() in evidence/extraction.py
+# python -m spacy download en_core_web_sm
+
+# Phase 3+ (timeline, completeness checker - pure Python, no new deps)
+
+# Phase 4 (DOCX export, report history)
+python-docx>=1.1.0
+
+# Deployment persistence (optional - only needed if DATABASE_URL /
+# SUPABASE_URL+SUPABASE_KEY are set; without them the app falls back to
+# SQLite + local disk, which is fine for local dev but NOT for a real
+# deployment since Render/Railway wipe local disk on every restart)
+psycopg2-binary>=2.9.9   # Postgres (Supabase) support for evidence/storage.py
+supabase>=2.6.0          # Supabase Storage support for evidence/blob_storage.py
+python-dotenv>=1.0.0     # loads .env automatically regardless of how you launch uvicorn
