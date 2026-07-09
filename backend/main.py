@@ -562,8 +562,27 @@ def download_report(report_id: str):
     )
 
 
+# @app.delete("/reports/{report_id}")
+# def delete_report_endpoint(report_id: str):
+#     """Feature 12: 'Delete' from report history."""
+#     storage.delete_report(report_id)
+#     return {"status": "deleted", "id": report_id}
+
+# @app.get("/")
+# def root():
+#     return {
+#         "message": "CyberSleuth AI Backend is running 🚀"
+#     }
+
 @app.delete("/reports/{report_id}")
 def delete_report_endpoint(report_id: str):
     """Feature 12: 'Delete' from report history."""
     storage.delete_report(report_id)
     return {"status": "deleted", "id": report_id}
+
+
+@app.get("/")
+def root():
+    return {
+        "message": "CyberSleuth AI Backend is running 🚀"
+    }
