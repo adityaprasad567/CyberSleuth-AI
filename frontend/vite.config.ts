@@ -1,26 +1,19 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { tanstackRouter } from "@tanstack/router-plugin/vite";
 import tailwindcss from "@tailwindcss/vite";
 import tsConfigPaths from "vite-tsconfig-paths";
-import { tanstackRouter } from "@tanstack/router-plugin/vite";
 
-// Plain client-side Vite + React SPA.
+// Converted from TanStack Start (SSR) to a plain client-side SPA.
+// TanStack Router itself still works great in pure client mode - only the
+// SSR wrapper (@tanstack/react-start / @lovable.dev/vite-tanstack-config /
+// nitro) was removed, since this app has no server functions or SSR data
+// loading, it only calls the FastAPI backend from the browser.
 export default defineConfig({
   plugins: [
-    tanstackRouter({
-      target: "react",
-      autoCodeSplitting: true,
-      routesDirectory: "./src/routes",
-      generatedRouteTree: "./src/routeTree.gen.ts",
-    }),
+    tanstackRouter({ target: "react", autoCodeSplitting: true }),
     react(),
     tailwindcss(),
     tsConfigPaths(),
   ],
-  build: {
-    outDir: "dist",
-  },
-  server: {
-    port: 5173,
-  },
 });

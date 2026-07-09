@@ -75,7 +75,7 @@ RETRIEVER_BACKEND = os.environ.get("RETRIEVER_BACKEND", "faiss").lower()
 if RETRIEVER_BACKEND == "lite":
     from retrieve_lite import LiteLegalRetriever as LegalRetriever
 else:
-    from retrieve import LegalRetriever
+    from retrieve_lite import LegalRetriever
 from llm_reasoning import generate_response
 from taxonomy import URGENT_CATEGORIES, EMERGENCY_MESSAGE, SAFETY_RECOMMENDATIONS, MIN_CONFIDENCE_THRESHOLD
 

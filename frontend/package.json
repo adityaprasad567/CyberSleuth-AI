@@ -1,8 +1,11 @@
 {
-  "name": "cybersleuth-ai-frontend",
+  "name": "tanstack_start_ts",
   "private": true,
   "sideEffects": false,
   "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -42,6 +45,7 @@
     "@tailwindcss/vite": "^4.2.1",
     "@tanstack/react-query": "^5.101.1",
     "@tanstack/react-router": "^1.170.16",
+    "@tanstack/router-plugin": "^1.168.18",
     "axios": "^1.18.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -67,7 +71,6 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
-    "@tanstack/router-plugin": "^1.168.18",
     "@types/node": "^22.16.5",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
@@ -81,6 +84,6 @@
     "prettier": "^3.7.3",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.56.1",
-    "vite": "^6.3.5"
+    "vite": "^8.0.16"
   }
 }
