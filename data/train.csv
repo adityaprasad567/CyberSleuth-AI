@@ -146,3 +146,327 @@ I entered my social media account password on a link sent via SMS that looked li
 "I invested Rs 1,20,000 in a trading app recommended by an 'advisor' that promised guaranteed high returns, and now I cannot withdraw my money.",investment_scam
 "My UPI PIN was never shared but Rs 15,000 was withdrawn after I clicked a link claiming to be from a bank official.",upi_fraud
 "A group on Instagram convinced me to invest Rs 1,20,000 in cryptocurrency and the app stopped working after I deposited funds.",investment_scam
+"I ordered a phone from Facebook Marketplace and paid online, but the seller stopped responding.",shopping_fraud
+"I ordered a mobile phone from a shopping website and paid online, but the seller never shipped the product.",shopping_fraud
+"I bought shoes from an Instagram store, made the payment through UPI, and the seller blocked me immediately.",shopping_fraud
+"After paying for a laptop on Facebook Marketplace, the seller stopped responding to my messages.",shopping_fraud
+"I ordered headphones from a fake Flipkart website and never received the parcel.",shopping_fraud
+"The website looked genuine, but after I paid for a smartwatch it disappeared completely.",shopping_fraud
+"I purchased a camera from an online store at a huge discount, but the order was never delivered.",shopping_fraud
+"I paid an advance for a gaming console on OLX and the seller deleted the listing.",shopping_fraud
+"The online seller asked me to pay outside Amazon using PhonePe and disappeared after receiving the money.",shopping_fraud
+"I ordered clothes from a shopping website but received an empty package instead.",shopping_fraud
+"I found an online store selling branded shoes at very low prices, but after payment the website stopped working.",shopping_fraud
+"I clicked a fake UPI collect request and ₹15,000 was deducted from my SBI account.",upi_fraud
+"A caller pretending to be from HDFC customer care convinced me to scan a QR code, after which ₹25,000 was lost.",upi_fraud
+"I received a fake refund link from Amazon support and my ICICI account was debited by ₹9,000.",upi_fraud
+"I entered my net banking password on a fake SBI login page received through SMS.",phishing
+"A fake Netflix email asked me to verify my account, and after logging in my email was compromised.",phishing
+"I invested ₹50,000 in a trading app recommended through Telegram, but I cannot withdraw my money.",investment_scam
+"A stranger promised guaranteed crypto profits on WhatsApp and disappeared after I invested ₹1,20,000.",investment_scam
+"A recruiter on WhatsApp offered me a work-from-home job and collected ₹10,000 as a registration fee.",fake_job_offer
+"My phone suddenly lost network service, and later I found ₹40,000 transferred from my bank account without my knowledge.",sim_swap
+"A person I met online is threatening to publish my private photos unless I pay ₹20,000.",sextortion
+"I ordered a mobile phone from a shopping website and paid online, but the seller never shipped the product.",shopping_fraud
+"I bought shoes from an Instagram store, made the payment through UPI, and the seller blocked me immediately.",shopping_fraud
+"After paying for a laptop on Facebook Marketplace, the seller stopped responding to my messages.",shopping_fraud
+"I ordered headphones from a fake Flipkart website and never received the parcel.",shopping_fraud
+"The website looked genuine, but after I paid for a smartwatch it disappeared completely.",shopping_fraud
+"I purchased a camera from an online store at a huge discount, but the order was never delivered.",shopping_fraud
+"I paid an advance for a gaming console on OLX and the seller deleted the listing.",shopping_fraud
+"The online seller asked me to pay outside Amazon using PhonePe and disappeared after receiving the money.",shopping_fraud
+"I ordered clothes from a shopping website but received an empty package instead.",shopping_fraud
+"I found an online store selling branded shoes at very low prices, but after payment the website stopped working.",shopping_fraud
+"I clicked a fake UPI collect request and ₹15,000 was deducted from my SBI account.",upi_fraud
+"A caller pretending to be from HDFC customer care convinced me to scan a QR code, after which ₹25,000 was lost.",upi_fraud
+"I received a fake refund link from Amazon support and my ICICI account was debited by ₹9,000.",upi_fraud
+"I entered my net banking password on a fake SBI login page received through SMS.",phishing
+"A fake Netflix email asked me to verify my account, and after logging in my email was compromised.",phishing
+"I invested ₹50,000 in a trading app recommended through Telegram, but I cannot withdraw my money.",investment_scam
+"A stranger promised guaranteed crypto profits on WhatsApp and disappeared after I invested ₹1,20,000.",investment_scam
+"A recruiter on WhatsApp offered me a work-from-home job and collected ₹10,000 as a registration fee.",fake_job_offer
+"My phone suddenly lost network service, and later I found ₹40,000 transferred from my bank account without my knowledge.",sim_swap
+"A person I met online is threatening to publish my private photos unless I pay ₹20,000.",sextortion
+"I ordered a MacBook from an online electronics store and after making the payment the website became unavailable.",shopping_fraud
+"I purchased a sofa from an online furniture website but the seller never dispatched the order.",shopping_fraud
+"The seller on Facebook Marketplace asked me to pay in advance and disappeared after receiving the money.",shopping_fraud
+"I found a fake Flipkart website through Google Ads and lost ₹28,000 after placing an order.",shopping_fraud
+"I ordered a gold chain from an online jewellery store but received nothing.",shopping_fraud
+"The online store kept delaying delivery until it completely stopped replying.",shopping_fraud
+"I purchased an air conditioner online and the tracking link provided was fake.",shopping_fraud
+"I transferred money to buy a second-hand bike advertised online, but the seller vanished.",shopping_fraud
+"I bought a PlayStation from Instagram and the seller blocked me after payment.",shopping_fraud
+"The shopping website looked professional but disappeared after collecting my payment.",shopping_fraud
+"I clicked a fake Google Pay reward link and ₹18,000 was deducted from my account.",upi_fraud
+"A scammer pretending to be from PhonePe customer care asked me to approve a payment request.",upi_fraud
+"I lost ₹22,000 after accepting a fake UPI collect request.",upi_fraud
+"A fake cashback offer tricked me into authorizing a UPI transaction.",upi_fraud
+"I scanned a QR code to receive a refund but instead my account was debited.",upi_fraud
+"I logged into a fake ICICI banking website and my credentials were stolen.",phishing
+"A fake Paytm verification email redirected me to a fraudulent login page.",phishing
+"I received an SMS claiming my bank account would be blocked unless I verified my details.",phishing
+"A fake courier tracking email stole my login information.",phishing
+"I entered my Gmail password on a website that looked exactly like Google's login page.",phishing
+"A person on WhatsApp convinced me to invest in cryptocurrency and disappeared with my money.",investment_scam
+"I joined an investment group on Telegram that promised daily profits but blocked my account.",investment_scam
+"A fake trading app showed huge profits but refused all withdrawal requests.",investment_scam
+"I invested my savings in an online forex platform that suddenly shut down.",investment_scam
+"A stranger promised guaranteed stock market returns and convinced me to transfer ₹75,000.",investment_scam
+"A stranger is threatening to upload my private pictures unless I send money immediately.",sextortion
+"My personal videos are being used to blackmail me for ₹50,000.",sextortion
+"I received messages demanding money to stop sharing my edited photos online.",sextortion
+"Someone hacked my account and is threatening to expose private conversations.",sextortion
+"A fake profile recorded my video call and is demanding payment.",sextortion
+"A fraudster posing as a bank employee requested my OTP and emptied my account.",otp_scam
+"I received a call claiming my KYC had expired and was tricked into revealing my OTP.",otp_scam
+"A fake insurance executive convinced me to share an OTP for policy verification.",otp_scam
+"The caller claimed my debit card would be blocked unless I shared the verification code.",otp_scam
+"I gave an OTP during a fake credit card verification call and lost money.",otp_scam
+"I paid a security deposit for an online job but the recruiter stopped responding.",fake_job_offer
+"A company offering remote work demanded money for training and disappeared.",fake_job_offer
+"I found a data entry job online but after paying the registration fee I was blocked.",fake_job_offer
+"A recruiter on LinkedIn asked me to pay for document verification before joining.",fake_job_offer
+"I transferred money for a part-time job advertised on Telegram but never received any work.",fake_job_offer
+"My SIM suddenly stopped working and unauthorized bank transactions were made.",sim_swap
+"I lost mobile network service and later discovered my SIM had been cloned.",sim_swap
+"Someone obtained a replacement SIM card without my permission and accessed my accounts.",sim_swap
+"My phone lost signal for several hours and my bank account was emptied.",sim_swap
+"I stopped receiving OTP messages because fraudsters performed a SIM swap attack.",sim_swap
+"My Aadhaar details were used to open a loan without my knowledge.",identity_theft
+"Someone created a bank account using my PAN card information.",identity_theft
+"I discovered that my identity documents were used for fraudulent verification.",identity_theft
+"A fraudster used my personal information to obtain financial services.",identity_theft
+"My identity proof was misused to register multiple fake accounts.",identity_theft
+"My Aadhaar details were used to open a bank account without my knowledge.",identity_theft
+"Someone used my PAN card details to apply for an instant loan.",identity_theft
+"I discovered that my identity documents were uploaded on multiple fake websites.",identity_theft
+"A fraudster created a mobile connection using my Aadhaar card.",identity_theft
+"My personal information was used to obtain a credit card without my permission.",identity_theft
+"My Instagram account was hacked and all my photos were deleted.",social_media_hacking
+"My Facebook account was taken over and scam messages were sent to my friends.",social_media_hacking
+"I lost access to my X account after clicking a suspicious login link.",social_media_hacking
+"My WhatsApp account was hijacked and the attacker started asking my contacts for money.",social_media_hacking
+"The hacker changed my Instagram email and phone number so I couldn't recover the account.",social_media_hacking
+"My Gmail account was hacked and confidential emails were deleted.",email_hacking
+"My Outlook email password was changed without my permission.",email_hacking
+"I cannot access my email because someone enabled two-factor authentication on my account.",email_hacking
+"The attacker used my email account to send phishing emails.",email_hacking
+"My recovery email and phone number were changed by an unknown person.",email_hacking
+"A fake SBI customer care number asked me to install AnyDesk and stole money from my account.",fake_customer_care
+"I searched Google for Flipkart customer care and called a fake support number that emptied my bank account.",fake_customer_care
+"A fake Amazon support executive convinced me to share my screen using TeamViewer.",fake_customer_care
+"The fraudster pretended to be from PhonePe support and tricked me into approving a payment.",fake_customer_care
+"I contacted a fake courier customer care number and lost ₹20,000.",fake_customer_care
+"I installed a loan app that accessed my contacts and started threatening me.",loan_app_fraud
+"A loan application demanded repayment even though I never received any loan.",loan_app_fraud
+"The fake loan app edited my photos and blackmailed me for more money.",loan_app_fraud
+"I borrowed ₹5,000 from an instant loan app but they demanded ₹20,000 in return.",loan_app_fraud
+"The loan company threatened to send abusive messages to my relatives.",loan_app_fraud
+"I received a video call from someone claiming to be a CBI officer who demanded money to avoid arrest.",digital_arrest_scam
+"A fake police officer said my Aadhaar was linked to money laundering and asked me to transfer funds.",digital_arrest_scam
+"I was told to stay on a video call while transferring money to verify my innocence.",digital_arrest_scam
+"The caller claimed I was under digital arrest unless I paid immediately.",digital_arrest_scam
+"A scammer pretending to be from the Supreme Court threatened legal action unless I transferred money.",digital_arrest_scam
+"My computer files were encrypted and the attacker demanded Bitcoin to unlock them.",ransomware
+"Every document on my laptop became inaccessible after opening an email attachment.",ransomware
+"I received a ransom note demanding cryptocurrency to recover my files.",ransomware
+"A virus encrypted my office documents and asked for payment in Bitcoin.",ransomware
+"My business server was locked by ransomware and all data became inaccessible.",ransomware
+"A fake courier message asked me to pay customs charges before delivering my parcel.",courier_scam
+"I received an SMS saying my package was held at customs and I had to pay a fee.",courier_scam
+"The delivery tracking website was fake and stole my payment details.",courier_scam
+"A courier executive requested an advance payment that turned out to be a scam.",courier_scam
+"I paid a delivery charge through UPI but the parcel never existed.",courier_scam
+"My electricity was supposedly going to be disconnected unless I paid through a link.",electricity_bill_scam
+"I received an SMS asking me to update my electricity bill immediately or face disconnection.",electricity_bill_scam
+"A fake electricity board employee convinced me to install a remote access app.",electricity_bill_scam
+"I lost ₹12,000 after paying a fake electricity bill through a phishing link.",electricity_bill_scam
+"The caller claimed my power supply would be cut within an hour unless I transferred money.",electricity_bill_scam
+"A fraudster pretending to be from Microsoft claimed my computer had viruses and asked me to install remote software.",tech_support_scam
+"A fake Windows support engineer gained remote access to my laptop and stole banking details.",tech_support_scam
+"The caller claimed my antivirus subscription had expired and charged me for fake renewal.",tech_support_scam
+"I was tricked into paying for unnecessary computer repair services over the phone.",tech_support_scam
+"A fake Apple support executive remotely accessed my computer and transferred money from my account.",tech_support_scam
+"I booked a flight ticket through a website offering huge discounts, but after payment the booking was never confirmed.",ticket_booking_fraud
+"I paid for train tickets through a fake travel portal and never received any ticket.",ticket_booking_fraud
+"The movie ticket booking website accepted my payment but didn't issue any tickets.",ticket_booking_fraud
+"I booked a hotel through a fake travel website and found there was no reservation.",ticket_booking_fraud
+"I paid for bus tickets from a fake booking app that disappeared after payment.",ticket_booking_fraud
+"I rented a flat after seeing an advertisement online and paid a security deposit, but the owner stopped answering calls.",rental_scam
+"I transferred advance rent for an apartment listed on Facebook, but the property never existed.",rental_scam
+"A fake landlord collected my booking amount and vanished.",rental_scam
+"I paid a token amount for a rental house without visiting it and was cheated.",rental_scam
+"The property photos were stolen from another website and the rental listing was fake.",rental_scam
+"I met someone through a dating app who convinced me to send money for an emergency and then disappeared.",romance_scam
+"My online partner claimed to be stranded abroad and requested financial help before blocking me.",romance_scam
+"A person I met on Instagram developed a relationship with me only to ask for money.",romance_scam
+"I was emotionally manipulated into transferring money to someone I met on a dating platform.",romance_scam
+"The person promised to visit India but repeatedly demanded money for travel expenses.",romance_scam
+"I invested in a new cryptocurrency project that turned out to be fake.",crypto_scam
+"A crypto trading website showed fake profits but refused withdrawals.",crypto_scam
+"I lost my savings after investing in a fake Bitcoin mining platform.",crypto_scam
+"A Telegram crypto expert convinced me to invest and then disappeared.",crypto_scam
+"The cryptocurrency exchange suddenly shut down after I deposited funds.",crypto_scam
+"A fake insurance agent collected premium payments without issuing any policy.",insurance_scam
+"I paid for vehicle insurance online but later discovered the policy number was fake.",insurance_scam
+"The insurance website accepted payment but never generated my policy document.",insurance_scam
+"A fraudster posing as an insurance officer convinced me to pay a processing fee.",insurance_scam
+"I renewed my health insurance through a fake portal and lost money.",insurance_scam
+"A fake charity requested donations for flood victims and disappeared after collecting funds.",charity_scam
+"I donated money to a fake NGO that was circulating messages on WhatsApp.",charity_scam
+"A scammer created a fake crowdfunding page for a medical emergency.",charity_scam
+"I transferred money to help disaster victims but later found the campaign was fraudulent.",charity_scam
+"A fake orphanage asked for donations through social media.",charity_scam
+"I received an email claiming I had won an international lottery and had to pay processing fees.",lottery_scam
+"A message informed me that I won a lucky draw but requested taxes before releasing the prize.",lottery_scam
+"I transferred money to claim a luxury car prize that never existed.",lottery_scam
+"A fake lottery company demanded documentation charges before sending my winnings.",lottery_scam
+"I was promised millions in prize money after paying a verification fee.",lottery_scam
+"A fake KYC update message redirected me to a phishing website.",kyc_scam
+"I received an SMS saying my bank account would be frozen unless I updated KYC immediately.",kyc_scam
+"The KYC verification link stole my banking credentials.",kyc_scam
+"I submitted Aadhaar and PAN details on a fake KYC portal.",kyc_scam
+"A caller pretending to be from the bank requested my documents for KYC verification.",kyc_scam
+"I installed an app suggested by customer support and it remotely controlled my phone.",remote_access_scam
+"A fraudster convinced me to install AnyDesk and accessed my banking application.",remote_access_scam
+"The fake support executive used TeamViewer to steal my confidential information.",remote_access_scam
+"I shared my mobile screen through a remote access app and money disappeared from my account.",remote_access_scam
+"I installed a remote support application after receiving a fake customer care call.",remote_access_scam
+"My debit card was used for online purchases without my permission.",credit_card_fraud
+"I noticed several unauthorized credit card transactions in my account statement.",credit_card_fraud
+"My card details were stolen after shopping on a suspicious website.",credit_card_fraud
+"I received transaction alerts for purchases I never made.",credit_card_fraud
+"My credit card was cloned and used at multiple stores.",credit_card_fraud
+"I paid an advance for a puppy advertised on Facebook, but the seller disappeared after receiving the money.",pet_sale_scam
+"I transferred money to buy a rare dog online, but the breeder blocked my number.",pet_sale_scam
+"I found a pet adoption website that collected payment but never delivered the animal.",pet_sale_scam
+"The pet seller demanded vaccination charges before shipping and vanished.",pet_sale_scam
+"I purchased an exotic bird online but realized the website was fake.",pet_sale_scam
+
+"I paid for an iPhone advertised on Telegram but received a fake tracking number.",telegram_marketplace_scam
+"The Telegram seller deleted the account after taking payment.",telegram_marketplace_scam
+"I bought a gaming laptop through a Telegram channel and never received it.",telegram_marketplace_scam
+"A Telegram marketplace offered huge discounts but disappeared after payment.",telegram_marketplace_scam
+"The admin removed me from the Telegram group after receiving my money.",telegram_marketplace_scam
+
+"I transferred money for a used car listed online, but the seller vanished.",vehicle_sale_scam
+"I paid a booking amount for a motorcycle advertised on OLX and lost my money.",vehicle_sale_scam
+"The seller provided fake vehicle registration documents before disappearing.",vehicle_sale_scam
+"I was cheated while purchasing a second-hand scooter through Facebook.",vehicle_sale_scam
+"I paid an advance for a luxury car that never existed.",vehicle_sale_scam
+
+"A fake scholarship website collected my application fee and disappeared.",scholarship_scam
+"I paid registration charges for an overseas scholarship that turned out to be fake.",scholarship_scam
+"A fraudster promised guaranteed scholarship approval after receiving payment.",scholarship_scam
+"The scholarship portal stopped responding after collecting document verification fees.",scholarship_scam
+"I uploaded my Aadhaar and PAN to a fake scholarship website.",scholarship_scam
+
+"I received an email saying my subscription had expired and entered my card details.",subscription_scam
+"A fake Netflix renewal page charged my credit card without authorization.",subscription_scam
+"I clicked a fake Amazon Prime renewal link and lost money.",subscription_scam
+"I paid to renew software through a fake website.",subscription_scam
+"The fraudster sent a fake subscription cancellation email that stole my credentials.",subscription_scam
+
+"I booked a holiday package through Instagram and the travel agency disappeared.",travel_package_scam
+"I paid for an international tour package that never existed.",travel_package_scam
+"A fake travel company accepted payment but never issued any travel documents.",travel_package_scam
+"I transferred money for a honeymoon package advertised online and was cheated.",travel_package_scam
+"The travel agency blocked my number after collecting the advance.",travel_package_scam
+
+"I received an SMS claiming my FASTag would be blocked unless I paid immediately.",fastag_scam
+"I clicked a fake FASTag recharge link and lost ₹5,000.",fastag_scam
+"A fraudster pretending to be NHAI support collected money for FASTag activation.",fastag_scam
+"My FASTag account was allegedly suspended, and I was tricked into making a payment.",fastag_scam
+"I paid a fake FASTag penalty through a phishing website.",fastag_scam
+
+"I paid a customs clearance fee for an international parcel that never existed.",customs_scam
+"A fake customs officer demanded payment before releasing my package.",customs_scam
+"I transferred money to clear imported goods that were never shipped.",customs_scam
+"The customs payment portal turned out to be fraudulent.",customs_scam
+"I received fake customs duty messages asking for urgent payment.",customs_scam
+
+"A fake event organizer collected ticket money and cancelled the event.",event_ticket_scam
+"I purchased concert tickets from a fraudulent website.",event_ticket_scam
+"I paid for VIP passes through Instagram but never received them.",event_ticket_scam
+"The event booking website disappeared after collecting payment.",event_ticket_scam
+"I bought cricket match tickets online that turned out to be fake.",event_ticket_scam
+
+"A fraudster created a fake Aadhaar update portal and collected my personal details.",aadhaar_scam
+"I submitted my Aadhaar information on a fake government website.",aadhaar_scam
+"I paid money for Aadhaar correction services that never happened.",aadhaar_scam
+"I received a fake UIDAI message requesting identity verification.",aadhaar_scam
+"My Aadhaar information was stolen through a fraudulent update website.",aadhaar_scam
+"I created a profile on a matrimonial website and paid money to someone claiming to be interested in marriage, but they disappeared.",matrimonial_scam
+"A person I met on a matrimonial app kept asking for financial help and later blocked me.",matrimonial_scam
+"The bride's family demanded money for visa processing before marriage and vanished.",matrimonial_scam
+"I transferred money to someone I met on a matrimonial portal for an emergency, but it was a scam.",matrimonial_scam
+"The matrimonial profile used fake photos and cheated me of ₹2,50,000.",matrimonial_scam
+
+"A fraudster convinced me to buy gift cards and shared the redemption codes, after which the balance disappeared.",gift_card_scam
+"I was told to pay using Amazon gift cards for a refund process, but it was fraudulent.",gift_card_scam
+"A fake Microsoft technician asked me to purchase gift cards to fix my computer.",gift_card_scam
+"I bought Google Play gift cards and shared the codes with a scammer.",gift_card_scam
+"The fraudster demanded Apple gift cards instead of bank payment.",gift_card_scam
+
+"I scanned a QR code to receive money, but money was deducted instead.",qr_code_scam
+"A fake QR code pasted over the original one redirected my payment.",qr_code_scam
+"I received a QR code through WhatsApp claiming it would refund my order.",qr_code_scam
+"The QR code linked to a fraudulent UPI payment request.",qr_code_scam
+"A shop displayed a fake QR code and my payment went to a scammer.",qr_code_scam
+
+"I received a video call from my manager asking for money, but it was an AI-generated deepfake.",deepfake_scam
+"A fake celebrity video convinced me to invest in cryptocurrency.",deepfake_scam
+"I believed an AI-generated video promoting an investment platform and lost money.",deepfake_scam
+"A deepfake video of my relative requested urgent financial help.",deepfake_scam
+"A fake news video manipulated with AI caused me to transfer money.",deepfake_scam
+
+"I received a phone call that sounded exactly like my son asking for emergency money, but it was AI-generated.",voice_clone_scam
+"The caller perfectly copied my friend's voice and requested an urgent bank transfer.",voice_clone_scam
+"I transferred money after hearing what I believed was my brother's voice.",voice_clone_scam
+"A cloned voice convinced me to reveal confidential information.",voice_clone_scam
+"The fraudster used AI voice technology to impersonate my employer.",voice_clone_scam
+
+"Someone created a fake profile pretending to be my company CEO and requested payments.",ai_impersonation
+"A fraudster used AI-generated photos to impersonate a government officer.",ai_impersonation
+"I received messages from an AI-generated fake profile asking for donations.",ai_impersonation
+"The attacker used AI to create a convincing fake identity and cheated me.",ai_impersonation
+"A fake AI-generated LinkedIn profile offered me a high-paying job.",ai_impersonation
+
+"I deposited cryptocurrency into a fake exchange that later stopped working.",fake_crypto_exchange
+"The crypto exchange froze my account after I deposited funds.",fake_crypto_exchange
+"I transferred Bitcoin to a fraudulent trading platform.",fake_crypto_exchange
+"A fake crypto wallet application stole all my digital assets.",fake_crypto_exchange
+"I lost Ethereum after using an unlicensed crypto exchange.",fake_crypto_exchange
+
+"I downloaded an APK from an unknown website and my banking app was compromised.",apk_malware
+"A fake Android application stole my SMS messages and OTPs.",apk_malware
+"I installed a modified APK that secretly accessed my contacts.",apk_malware
+"A malicious APK recorded my keystrokes and passwords.",apk_malware
+"My phone became infected after installing an application outside the Play Store.",apk_malware
+
+"I connected to a public Wi-Fi network and later discovered unauthorized transactions.",wifi_hacking
+"My email account was hacked after using free Wi-Fi at a café.",wifi_hacking
+"I logged into internet banking over public Wi-Fi and my credentials were stolen.",wifi_hacking
+"A hacker intercepted my data while I was connected to an unsecured wireless network.",wifi_hacking
+"I lost access to multiple accounts after connecting to an unknown hotspot.",wifi_hacking
+
+"My company's customer database was leaked and my personal information became public.",data_breach
+"I received a notification that my email address was exposed in a major data breach.",data_breach
+"My passwords appeared on the internet after a company's servers were hacked.",data_breach
+"My personal information was leaked from an online shopping website.",data_breach
+"I discovered that my phone number and address were exposed after a database breach.",data_breach
+"My home Wi-Fi password was changed without my permission and I lost internet access.",wifi_hacking
+"Someone connected to my Wi-Fi network and accessed my personal files.",wifi_hacking
+"I noticed unknown devices connected to my wireless router.",wifi_hacking
+"My office Wi-Fi was hacked and confidential files were stolen.",wifi_hacking
+"A hacker broke into my home network and monitored my internet activity.",wifi_hacking
+"Someone gained unauthorized access to my office network and copied sensitive documents.",unauthorized_network_access
+"I found unknown users connected to my company network without authorization.",unauthorized_network_access
+"The attacker bypassed network security and accessed our internal servers.",network_intrusion
+"My business network was compromised through an unsecured wireless connection.",network_intrusion
+"A fake public Wi-Fi hotspot captured my login credentials.",rogue_wifi_attack
+"I connected to free airport Wi-Fi and later discovered unauthorized transactions from my bank account.",rogue_wifi_attack
+"The coffee shop Wi-Fi was fake and intercepted my passwords.",rogue_wifi_attack
+"I used an unknown public hotspot and my email account was compromised.",rogue_wifi_attack
+"The attacker created a Wi-Fi network with the same name as the hotel's network to steal user data.",rogue_wifi_attack
+"I accidentally connected to a fake Wi-Fi network and all my internet traffic was intercepted.",rogue_wifi_attack
