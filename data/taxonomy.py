@@ -386,7 +386,6 @@
 # }
 
 # LABELS = list(CATEGORIES.keys())
-
 """
 Crime taxonomy for the cybercrime classifier.
 
@@ -716,6 +715,16 @@ REQUIRED_FIELDS = {
     "unauthorized_network_access": ["description", "crime_type", "evidence", "suspect_contact"],
     "network_intrusion": ["description", "crime_type", "evidence", "suspect_contact"],
     "rogue_wifi_attack": ["description", "crime_type", "evidence", "suspect_contact"],
+}
+
+FIELD_LABELS = {
+    "description": "Description",
+    "crime_type": "Crime Type (AI Detected)",
+    "evidence": "Evidence (screenshot/file uploaded)",
+    "transaction_id": "Transaction ID",
+    "bank_name": "Bank Name / Platform",
+    "financial_loss": "Financial Loss Amount",
+    "suspect_contact": "Suspect Phone Number / UPI ID",
 }
 
 
