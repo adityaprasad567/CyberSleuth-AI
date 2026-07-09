@@ -9,3 +9,4 @@ joblib
 python-multipart
 opencv-python-headless
 email-validator
+psycopg2-binary
