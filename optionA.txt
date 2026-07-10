@@ -10,5 +10,5 @@ python-multipart
 opencv-python-headless
 email-validator
 psycopg2-binary
-easyocr>=1.7.1
-pillow>=10.0.0 
+pytesseract>=0.3.10
+pillow>=10.0.0
