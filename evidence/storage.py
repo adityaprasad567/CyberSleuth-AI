@@ -96,6 +96,28 @@ def init_db():
             )
         """)
 
+    # Feature 13 (OCR pipeline): new columns added to the existing `evidence`
+    # table via ALTER TABLE rather than changing the CREATE TABLE statement
+    # above, so this stays a no-op on a fresh DB (columns already in place)
+    # and a safe, additive migration on any existing app.db that predates
+    # OCR support. Each column gets its OWN connection/transaction (not
+    # reused from the block above) - critical for Postgres, where a failed
+    # statement (e.g. "column already exists") aborts the entire transaction
+    # and silently discards every other statement run on that same
+    # connection until a rollback, which would otherwise make one already-
+    # migrated column block the rest of the migration from ever applying.
+    for column_def in (
+        "ocr_text TEXT",
+        "crime_prediction TEXT",
+        "confidence REAL",
+        "evidence_summary_json TEXT",
+    ):
+        try:
+            with get_conn() as conn:
+                conn.execute(f"ALTER TABLE evidence ADD COLUMN {column_def}")
+        except Exception:
+            pass  # column already exists - fine, this migration has already run before
+
 
 def save_report_record(report_id, complaint_id, crime_type, status, format, filename, file_path):
     """Feature 12: Report History - records a generated report so it can be
@@ -137,17 +159,49 @@ def delete_report(report_id: str):
 
 
 def save_evidence_record(evidence_id, complaint_id, filename, file_path, file_type,
-                          file_size, sha256, extracted_entities: dict):
+                          file_size, sha256, extracted_entities: dict,
+                          ocr_text: str = "", crime_prediction: str = None,
+                          confidence: float = None, evidence_summary: dict = None):
     with get_conn() as conn:
         conn.execute(
             """INSERT INTO evidence
                (id, complaint_id, filename, file_path, file_type, file_size,
-                upload_time, sha256, extracted_entities_json)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                upload_time, sha256, extracted_entities_json,
+                ocr_text, crime_prediction, confidence, evidence_summary_json)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
             (evidence_id, complaint_id, filename, file_path, file_type, file_size,
              datetime.now().isoformat(timespec="seconds"), sha256,
-             json.dumps(extracted_entities)),
+             json.dumps(extracted_entities), ocr_text, crime_prediction, confidence,
+             json.dumps(evidence_summary or {})),
         )
+
+
+def update_evidence_text(evidence_id: str, ocr_text: str, extracted_entities: dict,
+                          evidence_summary: dict, crime_prediction: str = None,
+                          confidence: float = None):
+    """
+    Feature 13: lets the user correct OCR text after upload (e.g. OCR
+    misread a digit in a phone number) and have entities/classification
+    recomputed against the corrected text - "edit extracted text before
+    final submission". Returns the updated row, or None if the id doesn't exist.
+    """
+    with get_conn() as conn:
+        conn.execute(
+            """UPDATE evidence
+               SET ocr_text = ?, extracted_entities_json = ?, evidence_summary_json = ?,
+                   crime_prediction = ?, confidence = ?
+               WHERE id = ?""",
+            (ocr_text, json.dumps(extracted_entities), json.dumps(evidence_summary or {}),
+             crime_prediction, confidence, evidence_id),
+        )
+        row = conn.execute("SELECT * FROM evidence WHERE id = ?", (evidence_id,)).fetchone()
+    return dict(row) if row else None
+
+
+def get_evidence(evidence_id: str):
+    with get_conn() as conn:
+        row = conn.execute("SELECT * FROM evidence WHERE id = ?", (evidence_id,)).fetchone()
+    return dict(row) if row else None
 
 
 def list_evidence_for_complaint(complaint_id: str) -> list:

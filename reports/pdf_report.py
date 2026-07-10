@@ -187,6 +187,31 @@ def build_pdf(report_data: dict, output_path: str):
         ]))
         flow.append(table)
 
+    # Feature 13: OCR pipeline - one subsection per uploaded image that
+    # actually had OCR text extracted. Skips non-image evidence (PDF/audio/
+    # video, which have empty ocr_text) and skips images where OCR found no
+    # readable text (nothing useful to show per-image beyond what's already
+    # in the Uploaded Evidence table above).
+    ocr_items = [e for e in evidence if e.get("ocr_text")]
+    if ocr_items:
+        _section("Evidence Extracted From Uploaded Images", flow)
+        for idx, e in enumerate(ocr_items, start=1):
+            flow.append(Paragraph(f"<b>Image {idx}: {_safe_text(e.get('filename', ''))}</b>", BODY_STYLE))
+            crime_pred = e.get("crime_prediction")
+            confidence = e.get("confidence")
+            pred_line_parts = []
+            if crime_pred:
+                pred_line_parts.append(f"Crime category prediction: {crime_pred.replace('_', ' ').title()}")
+            if confidence is not None:
+                pred_line_parts.append(f"Confidence: {confidence:.0%}")
+            if e.get("upload_time"):
+                pred_line_parts.append(f"Timestamp: {e['upload_time']}")
+            if pred_line_parts:
+                flow.append(Paragraph(_safe_text(" · ".join(pred_line_parts)), META_STYLE))
+            flow.append(Paragraph("<i>Extracted text:</i>", META_STYLE))
+            flow.append(Paragraph(_safe_text(e.get("ocr_text", "")), BODY_STYLE))
+            flow.append(Spacer(1, 8))
+
     timeline = report_data.get("timeline") or []
     if timeline:
         _section("AI-Generated Timeline", flow)

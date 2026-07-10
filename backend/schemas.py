@@ -96,6 +96,21 @@ class EvidenceRecord(BaseModel):
     upload_time: str
     sha256: str
     extracted_entities: dict
+    # Feature 13 (OCR pipeline) - all optional/backward-compatible: existing
+    # non-image evidence (PDFs, audio, video) simply leaves these at their
+    # defaults, exactly as before OCR was added.
+    ocr_text: str = ""
+    ocr_message: str = ""  # e.g. "No readable text detected in the uploaded image."
+    crime_prediction: Optional[str] = None
+    confidence: Optional[float] = None
+    evidence_summary: dict = {}
+
+
+class UpdateEvidenceTextRequest(BaseModel):
+    """Feature 13: lets the user correct OCR text after upload and have
+    entities + classification recomputed - 'edit extracted text before
+    final submission'."""
+    ocr_text: str
 
 
 # --- Phase 3: completeness + timeline + complaint draft models (new, additive) ---
