@@ -46,7 +46,7 @@ from fastapi.responses import FileResponse, Response
 from schemas import (
     ComplaintRequest, AnalysisResponse, ClassificationResult, LegalReference, ReportRequest,
     EvidenceRecord, CompletenessResponse, CompletenessField, TimelineEvent, ComplaintDraftResponse,
-    ReportHistoryItem, TimelineRequest,
+    ReportHistoryItem, TimelineRequest, UpdateEvidenceTextRequest,
 )
 # CLASSIFIER_BACKEND=local   (default) - classifier/predict.py, needs torch/transformers
 #                                        + a trained model in classifier/crime_classifier/
@@ -87,6 +87,7 @@ import extraction
 import hashing
 import storage
 import blob_storage
+import ocr
 
 sys.path.append(str(Path(__file__).parent.parent / "case_builder"))
 from timeline import build_timeline
@@ -211,6 +212,33 @@ def _run_pipeline(text: str, incident_date=None):
     }
 
 
+def _classify_text_only(text: str):
+    """
+    Feature 13 (OCR pipeline): classifies OCR-extracted text using the
+    EXISTING, UNMODIFIED classifier - same `classify()` call _run_pipeline()
+    uses - but skips RAG retrieval and LLM reasoning. Evidence images are
+    classified individually and there can be several per complaint, so this
+    stays fast and doesn't require the LLM reasoning layer to be configured
+    just to upload evidence. The full classify -> retrieve -> LLM pipeline
+    still runs separately over the complaint's main text via /analyze and
+    /generate-report, unaffected by this.
+    Returns (label, confidence) or (None, None) if the classifier isn't
+    loaded or the text is empty.
+    """
+    if _model is None or not text or not text.strip():
+        return None, None
+    try:
+        if CLASSIFIER_BACKEND == "gemini":
+            results = classify(text, top_k=1)
+        else:
+            results = classify(text, _tokenizer, _model, top_k=1)
+        top = results[0]
+        return top["label"], top["confidence"]
+    except Exception:
+        # Never let a classification failure block the evidence upload itself
+        return None, None
+
+
 @app.post("/analyze", response_model=AnalysisResponse)
 def analyze(request: ComplaintRequest):
     pipeline = _run_pipeline(request.text, request.incident_date)
@@ -257,12 +285,22 @@ def _evidence_context(complaint_id: str = None):
 async def upload_evidence(complaint_id: str = Form(...), file: UploadFile = File(...), ocr_text: str = Form("")):
     """
     Feature 2 (Evidence Manager) + Feature 3 (AI Evidence Extraction) +
-    Feature 8 (Evidence Integrity - SHA-256 hash).
+    Feature 8 (Evidence Integrity - SHA-256 hash) + Feature 13 (OCR pipeline).
 
-    `ocr_text` is optional: if the caller already has extracted text (e.g.
-    pasted chat export content, or OCR run client-side), pass it here so
-    extraction.py can pull entities from it. Phase 2 does not include OCR
-    itself - see README for why and what to add for that.
+    `ocr_text` remains an optional override: if the caller already has
+    extracted text (e.g. pasted chat export content), pass it here and OCR
+    is skipped. Otherwise, for image uploads (JPG/JPEG/PNG/WEBP), OCR now
+    runs automatically:
+
+        image file -> ocr.extract_text_from_image() -> extracted text
+                    -> extraction.extract_from_evidence_file() (entities,
+                       UNCHANGED regex logic)
+                    -> extraction.build_evidence_summary() (Key Information)
+                    -> _classify_text_only() (the EXISTING classifier,
+                       unmodified, run exactly as if this text were typed)
+
+    Non-image evidence (PDF/audio/video) behaves exactly as before - OCR is
+    only attempted for supported image types.
     """
     evidence_id = str(uuid.uuid4())
     safe_filename = f"{evidence_id}_{file.filename}"
@@ -276,18 +314,33 @@ async def upload_evidence(complaint_id: str = Form(...), file: UploadFile = File
     file_type = file.content_type or "application/octet-stream"
     sha256 = hashing.compute_sha256(file_path)
 
-    extracted = extraction.extract_from_evidence_file(file_path, file_type, ocr_text=ocr_text)
+    # Run OCR automatically for images, unless the caller already supplied
+    # text explicitly (ocr_text override takes precedence either way).
+    ocr_message = ""
+    final_ocr_text = ocr_text
+    if not final_ocr_text and ocr.is_supported_image(file_type):
+        final_ocr_text = ocr.extract_text_from_image(file_path, file_type)
+        if not final_ocr_text:
+            ocr_message = "No readable text detected in the uploaded image."
+
+    extracted = extraction.extract_from_evidence_file(file_path, file_type, ocr_text=final_ocr_text)
+    evidence_summary = extraction.build_evidence_summary(final_ocr_text)
+
+    # Image -> OCR text -> existing classifier, exactly as if typed by the user.
+    crime_prediction, confidence = _classify_text_only(final_ocr_text)
 
     # file_path above is a local temp copy used only so extraction.py's
-    # cv2/QR-code reading has an actual file to open. The locator saved to
-    # the DB is the durable copy - Supabase Storage if configured, otherwise
-    # the same local disk (storage/blobs/) as a fallback.
+    # cv2/QR-code reading (and OCR) has an actual file to open. The locator
+    # saved to the DB is the durable copy - Supabase Storage if configured,
+    # otherwise the same local disk (storage/blobs/) as a fallback.
     locator = blob_storage.save_blob(f"evidence/{safe_filename}", contents)
 
     storage.save_evidence_record(
         evidence_id=evidence_id, complaint_id=complaint_id, filename=file.filename,
         file_path=locator, file_type=file_type, file_size=file_size,
         sha256=sha256, extracted_entities=extracted,
+        ocr_text=final_ocr_text, crime_prediction=crime_prediction,
+        confidence=confidence, evidence_summary=evidence_summary,
     )
 
     return EvidenceRecord(
@@ -295,6 +348,40 @@ async def upload_evidence(complaint_id: str = Form(...), file: UploadFile = File
         file_type=file_type, file_size=file_size,
         upload_time=storage.list_evidence_for_complaint(complaint_id)[-1]["upload_time"],
         sha256=sha256, extracted_entities=extracted,
+        ocr_text=final_ocr_text, ocr_message=ocr_message,
+        crime_prediction=crime_prediction, confidence=confidence,
+        evidence_summary=evidence_summary,
+    )
+
+
+@app.patch("/evidence/{evidence_id}/text", response_model=EvidenceRecord)
+def update_evidence_text(evidence_id: str, request: UpdateEvidenceTextRequest):
+    """
+    Feature 13: lets the user correct OCR text after upload (e.g. OCR
+    misread a digit) and have entities, evidence summary, and crime
+    prediction all recomputed against the corrected text - "edit extracted
+    text before final submission". 404s if the evidence_id doesn't exist.
+    """
+    existing = storage.get_evidence(evidence_id)
+    if not existing:
+        raise HTTPException(status_code=404, detail="Evidence not found")
+
+    corrected_text = request.ocr_text
+    extracted = extraction.extract_from_text(corrected_text) if corrected_text else {}
+    evidence_summary = extraction.build_evidence_summary(corrected_text)
+    crime_prediction, confidence = _classify_text_only(corrected_text)
+
+    updated = storage.update_evidence_text(
+        evidence_id=evidence_id, ocr_text=corrected_text, extracted_entities=extracted,
+        evidence_summary=evidence_summary, crime_prediction=crime_prediction, confidence=confidence,
+    )
+
+    return EvidenceRecord(
+        id=updated["id"], complaint_id=updated["complaint_id"], filename=updated["filename"],
+        file_type=updated["file_type"], file_size=updated["file_size"], upload_time=updated["upload_time"],
+        sha256=updated["sha256"], extracted_entities=extracted,
+        ocr_text=corrected_text, crime_prediction=crime_prediction, confidence=confidence,
+        evidence_summary=evidence_summary,
     )
 
 
@@ -306,6 +393,9 @@ def list_evidence(complaint_id: str):
             id=row["id"], complaint_id=row["complaint_id"], filename=row["filename"],
             file_type=row["file_type"], file_size=row["file_size"], upload_time=row["upload_time"],
             sha256=row["sha256"], extracted_entities=__import__("json").loads(row["extracted_entities_json"] or "{}"),
+            ocr_text=row.get("ocr_text") or "", crime_prediction=row.get("crime_prediction"),
+            confidence=row.get("confidence"),
+            evidence_summary=__import__("json").loads(row.get("evidence_summary_json") or "{}"),
         )
         for row in rows
     ]
@@ -423,7 +513,16 @@ def generate_report(request: ReportRequest):
     evidence_rows, extracted_entities = _evidence_context(complaint_id)
     evidence_list = [
         {"filename": r["filename"], "file_type": r["file_type"],
-         "upload_time": r["upload_time"], "sha256": r["sha256"]}
+         "upload_time": r["upload_time"], "sha256": r["sha256"],
+         # Feature 13 (OCR pipeline): included so pdf_report.py can render
+         # the "Evidence Extracted From Uploaded Images" section per image.
+         # Non-image evidence simply has empty ocr_text, so that section
+         # skips it automatically - no change to how PDF/audio/video
+         # evidence rows are handled.
+         "ocr_text": r.get("ocr_text") or "",
+         "crime_prediction": r.get("crime_prediction"),
+         "confidence": r.get("confidence"),
+         "evidence_summary": __import__("json").loads(r.get("evidence_summary_json") or "{}")}
         for r in evidence_rows
     ]
     timeline = build_timeline(request.text, evidence_rows)

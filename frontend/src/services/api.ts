@@ -72,6 +72,35 @@ export interface EvidenceRecord {
   upload_time: string;
   sha256: string;
   extracted_entities: Record<string, unknown>;
+  // Feature 13 (OCR pipeline) - present on image evidence; empty/undefined
+  // defaults on non-image evidence (PDF/audio/video), unchanged from before.
+  ocr_text?: string;
+  ocr_message?: string; // e.g. "No readable text detected in the uploaded image."
+  crime_prediction?: string | null;
+  confidence?: number | null;
+  evidence_summary?: EvidenceSummary;
+}
+
+// Structured "Key Information" shape returned by extraction.build_evidence_summary()
+export interface EvidenceSummary {
+  phone_numbers: string[];
+  emails: string[];
+  upi_ids: string[];
+  transaction_ids: string[];
+  urls: string[];
+  bank_names: string[];
+  amounts: string[];
+  dates: string[];
+  times: string[];
+  social_handles: string[];
+  reference_numbers: string[];
+  wallet_ids: string[];
+  order_ids: string[];
+  otps: string[];
+  ip_addresses: string[];
+  device_ids: string[];
+  masked_account_numbers: string[];
+  summary: string;
 }
 
 export interface ReportHistoryItem {
@@ -170,6 +199,30 @@ export const CybercrimeAPI = {
 
   deleteEvidence: (evidenceId: string) =>
     api.delete(`/evidence/${evidenceId}`).then((r) => r.data),
+
+  // Feature 13 (OCR pipeline): uploads exactly ONE file and returns its
+  // record directly (unlike the batch uploadEvidence() above), so the
+  // caller can show per-file "OCR Processing… / OCR Completed" status as
+  // each request resolves rather than waiting for the whole batch.
+  uploadSingleEvidence: (file: File, complaintId: string, onProgress?: (p: number) => void) => {
+    const fd = new FormData();
+    fd.append("complaint_id", complaintId);
+    fd.append("file", file);
+    return api
+      .post<EvidenceRecord>("/evidence/upload", fd, {
+        headers: { "Content-Type": "multipart/form-data" },
+        onUploadProgress: (e) => {
+          if (onProgress && e.total) onProgress(Math.round((e.loaded * 100) / e.total));
+        },
+      })
+      .then((r) => r.data);
+  },
+
+  // Feature 13: PATCH corrected OCR text - re-runs entity extraction, the
+  // evidence summary, and crime classification server-side against the
+  // user-edited text ("edit extracted text before final submission").
+  updateEvidenceText: (evidenceId: string, ocrText: string) =>
+    api.patch<EvidenceRecord>(`/evidence/${evidenceId}/text`, { ocr_text: ocrText }).then((r) => r.data),
 
   // POST /generate-report - returns a raw file (PDF/DOCX/TXT), not JSON.
   generateReport: (payload: ReportRequestPayload) =>
