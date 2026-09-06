@@ -12,3 +12,5 @@ email-validator
 psycopg2-binary
 easyocr>=1.7.1
 pillow>=10.0.0 
+langchain-core>=0.3.0
+langgraph>=0.2.0
