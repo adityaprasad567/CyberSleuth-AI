@@ -75,9 +75,19 @@ RETRIEVER_BACKEND = os.environ.get("RETRIEVER_BACKEND", "faiss").lower()
 if RETRIEVER_BACKEND == "lite":
     from retrieve_lite import LiteLegalRetriever as LegalRetriever
 else:
-    from retrieve_lite import LegalRetriever
+    from retrieve import LegalRetriever
 from llm_reasoning import generate_response
 from taxonomy import URGENT_CATEGORIES, EMERGENCY_MESSAGE, SAFETY_RECOMMENDATIONS, MIN_CONFIDENCE_THRESHOLD
+
+# PIPELINE_ENGINE=manual   (default) - straight-line _run_pipeline_manual() below
+# PIPELINE_ENGINE=langgraph          - rag/langgraph_pipeline.py's StateGraph version;
+#                                       same classify/retrieve/reason stages, wired as an
+#                                       explicit graph with a real conditional branch
+#                                       (skip the LLM when retrieval comes back empty).
+#                                       Needs `pip install langgraph langchain-core`.
+PIPELINE_ENGINE = os.environ.get("PIPELINE_ENGINE", "manual").lower()
+if PIPELINE_ENGINE == "langgraph":
+    from langgraph_pipeline import build_pipeline_graph, run_pipeline_langgraph
 
 sys.path.append(str(Path(__file__).parent.parent / "reports"))
 from pdf_report import build_pdf
@@ -107,11 +117,21 @@ app.add_middleware(
 _tokenizer = None
 _model = None
 _retriever = None
+_pipeline_graph = None  # only built when PIPELINE_ENGINE=langgraph
+
+
+def _classify_bound(text: str, top_k: int = 3):
+    """classify_fn passed to build_pipeline_graph() - closes over whichever
+    CLASSIFIER_BACKEND is active so langgraph_pipeline.py never needs to
+    know about local/sklearn/gemini backends itself."""
+    if CLASSIFIER_BACKEND == "gemini":
+        return classify(text, top_k=top_k)
+    return classify(text, _tokenizer, _model, top_k=top_k)
 
 
 @app.on_event("startup")
 def load_resources():
-    global _tokenizer, _model, _retriever
+    global _tokenizer, _model, _retriever, _pipeline_graph
     if CLASSIFIER_BACKEND == "gemini":
         if not (os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")):
             print("WARNING: CLASSIFIER_BACKEND=gemini but no GEMINI_API_KEY/GOOGLE_API_KEY set.")
@@ -130,6 +150,21 @@ def load_resources():
         _retriever = LegalRetriever(index_dir="../rag/index")
     except Exception as e:
         print(f"WARNING: RAG index not loaded ({e}). Build it first - see README.")
+
+    if PIPELINE_ENGINE == "langgraph" and _model is not None and _retriever is not None:
+        try:
+            _pipeline_graph = build_pipeline_graph(
+                classify_fn=_classify_bound,
+                retriever=_retriever,
+                generate_fn=generate_response,
+                safety_recommendations=SAFETY_RECOMMENDATIONS,
+                urgent_categories=URGENT_CATEGORIES,
+                emergency_message=EMERGENCY_MESSAGE,
+                min_confidence_threshold=MIN_CONFIDENCE_THRESHOLD,
+            )
+            print("PIPELINE_ENGINE=langgraph - compiled state graph ready.")
+        except Exception as e:
+            print(f"WARNING: langgraph pipeline failed to build ({e}). Falling back to manual pipeline.")
 
 
 @app.post("/complaint/new")
@@ -151,19 +186,32 @@ def health():
         "status": "ok",
         "classifier_loaded": _model is not None,
         "retriever_loaded": _retriever is not None,
+        "pipeline_engine": PIPELINE_ENGINE if _pipeline_graph is not None else "manual",
     }
 
 
 def _run_pipeline(text: str, incident_date=None):
     """Shared core pipeline: classify -> retrieve -> LLM reasoning.
     Used by both /analyze and /generate-report so neither endpoint drifts
-    out of sync with the other."""
+    out of sync with the other. Dispatches to the LangGraph-orchestrated
+    version when PIPELINE_ENGINE=langgraph and the graph built successfully
+    at startup; otherwise (default) runs the straight-line version below."""
     if _model is None or _retriever is None:
         raise HTTPException(
             status_code=503,
             detail="Backend resources not loaded. Train the classifier and build the RAG index first (see README).",
         )
 
+    if PIPELINE_ENGINE == "langgraph" and _pipeline_graph is not None:
+        return run_pipeline_langgraph(_pipeline_graph, text, incident_date)
+    return _run_pipeline_manual(text, incident_date)
+
+
+def _run_pipeline_manual(text: str, incident_date=None):
+    """Original straight-line implementation - classify -> retrieve -> LLM
+    reasoning, called directly with no graph/orchestration layer. This is
+    the default (PIPELINE_ENGINE=manual) and the fallback if the langgraph
+    engine fails to build at startup."""
     if CLASSIFIER_BACKEND == "gemini":
         classification_results = classify(text, top_k=3)
     else:
